@@ -1,53 +1,41 @@
 -------------------------------------------
-Source installation information for modders
+                导入教程
 -------------------------------------------
-This code follows the Minecraft Forge installation methodology. It will apply
-some small patches to the vanilla MCP source code, giving you and it access 
-to some of the data and functions you need to build a successful mod.
+1.打开idea界面
+2.选择从vsc导入项目
+3.URL处填写项目的ssl地址（http一般连不上）
+4.等待克隆（克隆时需要在socket和ssr环境下）
+-------------------------------------------
+                 推送
+-------------------------------------------
+1.推送时先推送至个人分支，确定无误后再合并到主分支
+2.提交的格式参考规范如下
 
-Note also that the patches are built against "unrenamed" MCP source code (aka
-srgnames) - this means that you will not be able to read them directly against
-normal code.
+其中<type>内为必填内容,<?body><?footer>（?）为选填内容
 
-Source pack installation information:
+<type>(影响范围)（提交目的简述）: feat(添加新功能)|fix(修补bug)|docs(修改文档)|style(修改样式不影响代码的运行逻辑)|refactor(代码重构)|test(增加测试)|chore(构建过程或者辅助工具变动)
 
-Standalone source installation
-==============================
+<?body>:此处填写提交的详细改动，包括更改了哪些文件，增删改了什么内容
 
-See the Forge Documentation online for more detailed instructions:
-http://mcforge.readthedocs.io/en/latest/gettingstarted/
+<?footer>:
+「不兼容变动」。如果当前代码与上一个版本不兼容，则 Footer 部分以BREAKING CHANGE开头，后面是对变动的描述、以及变动理由和迁移方法
+「关闭Issue」。如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 
 
-Step 1: Open your command-line and browse to the folder where you extracted the zip file.
 
-Step 2: You're left with a choice.
-If you prefer to use Eclipse:
-1. Run the following command: "gradlew genEclipseRuns" (./gradlew genEclipseRuns if you are on Mac/Linux)
-2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
-   or run "gradlew eclipse" to generate the project.
-(Current Issue)
-4. Open Project > Run/Debug Settings > Edit runClient and runServer > Environment
-5. Edit MOD_CLASSES to show [modid]%%[Path]; 2 times rather then the generated 4.
+示例:
+1.
+<feat>:大当量tnt
+<body>:增加了新的方块<大当量tnt>,增加了big_tnt.java和event.java中的一段运行逻辑(xx-xx行)
 
-If you prefer to use IntelliJ:
-1. Open IDEA, and import project.
-2. Select your build.gradle file and have it import.
-3. Run the following command: "gradlew genIntellijRuns" (./gradlew genIntellijRuns if you are on Mac/Linux)
-4. Refresh the Gradle Project in IDEA if required.
+2.
+<fix>(big_tnt.java & event.java):
+<body>:修复了方块<大当量tnt>不会爆炸的bug
+<footer>:关闭issue 6
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can run "gradlew --refresh-dependencies" to refresh the local cache. "gradlew clean" to reset everything {this does not affect your code} and then start the processs again.
+3.
+<docs>:增加了文档xxx.txt
 
-Should it still not work, 
-Refer to #ForgeGradle on EsperNet for more information about the gradle environment.
-or the Forge Project Discord discord.gg/UvedJ9m
-
-Forge source installation
-=========================
-MinecraftForge ships with this code and installs it as part of the forge
-installation process, no further action is required on your part.
-
-LexManos' Install Video
-=======================
-https://www.youtube.com/watch?v=8VEdtQLuLO0&feature=youtu.be
-
-For more details update more often refer to the Forge Forums:
-http://www.minecraftforge.net/forum/index.php/topic,14048.0.html
+4.
+<refactor>(big_tnt.java):重构
+<body>:修改了方法xxxxxxxx,修改了某个功能的运行逻辑
+<footer>(BREAKING CHANGE):修改某功能的运行逻辑放弃了旧的xxxxx方法，使用了新的xxxxx方法，不兼容版本xxx及以下的开发环境
