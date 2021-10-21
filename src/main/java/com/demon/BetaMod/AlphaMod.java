@@ -7,11 +7,11 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = BetaMod.MODID, name = BetaMod.NAME, version = BetaMod.VERSION)
-public class BetaMod
+@Mod(modid = AlphaMod.MODID, name = AlphaMod.NAME, version = AlphaMod.VERSION)
+public class AlphaMod
 {
-    public static final String MODID = "betamod";
-    public static final String NAME = "Beta Mod";
+    public static final String MODID = "alphamod";
+    public static final String NAME = "Alpha Mod";
     public static final String VERSION = "1.0";
 
     private static Logger logger;

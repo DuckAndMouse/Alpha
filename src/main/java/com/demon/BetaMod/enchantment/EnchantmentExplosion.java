@@ -1,6 +1,6 @@
 package com.demon.BetaMod.enchantment;
 
-import com.demon.BetaMod.BetaMod;
+import com.demon.BetaMod.AlphaMod;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.init.Enchantments;
@@ -17,7 +17,7 @@ public class EnchantmentExplosion extends Enchantment
     public EnchantmentExplosion()
     {
         super(Enchantment.Rarity.RARE, EnumEnchantmentType.WEAPON,new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
-        this.setName(BetaMod.MODID+".explosion");
+        this.setName(AlphaMod.MODID+".explosion");
         this.setRegistryName("explosion");
     }
 

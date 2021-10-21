@@ -1,6 +1,6 @@
 package com.demon.BetaMod.enchantment;
 
-import com.demon.BetaMod.BetaMod;
+import com.demon.BetaMod.AlphaMod;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -17,7 +17,7 @@ public class EnchantmentFireChest extends Enchantment
     {
         super(Enchantment.Rarity.RARE, EnumEnchantmentType.ARMOR_CHEST,
                 new EntityEquipmentSlot[] {EntityEquipmentSlot.CHEST});
-        this.setName(BetaMod.MODID+".fire_chest");
+        this.setName(AlphaMod.MODID+".fire_chest");
         this.setRegistryName("fireChest");
     }
     @Override
